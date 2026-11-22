@@ -454,7 +454,7 @@ Mediciones realizadas con `CaptureQueriesContext(connection)` sobre el conjunto 
 
 ### Integrantes del grupo
 
-- *(Completar con el nombre y código estudiantil de cada integrante del grupo antes de la entrega final)*
+NICOLAS OSWALDO FLOREZ DUARTE - 1152474
 
 ### Preguntas de reflexión
 
