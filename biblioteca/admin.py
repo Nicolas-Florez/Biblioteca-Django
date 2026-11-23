@@ -65,6 +65,7 @@ class EjemplarInline(admin.TabularInline):
 class CategoriaAdmin(admin.ModelAdmin):
     list_display = ("nombre", "total_libros")
     search_fields = ("nombre",)
+    ordering = ["nombre"]
 
     def get_queryset(self, request):
         return super().get_queryset(request).annotate(_total_libros=Count("libros"))
@@ -78,6 +79,7 @@ class CategoriaAdmin(admin.ModelAdmin):
 class AutorAdmin(admin.ModelAdmin):
     list_display = ("nombre", "total_libros")
     search_fields = ("nombre",)
+    ordering = ["nombre"]
 
     def get_queryset(self, request):
         return super().get_queryset(request).annotate(_total_libros=Count("libros"))
@@ -102,6 +104,7 @@ class LibroAdmin(admin.ModelAdmin):
     list_filter = ("categoria", "idioma", "anio_publicacion")
     filter_horizontal = ("autores",)
     inlines = [EjemplarInline]
+    ordering = ["titulo"]
 
     def get_queryset(self, request):
         return (
@@ -126,6 +129,7 @@ class EjemplarAdmin(admin.ModelAdmin):
     search_fields = ("codigo_inventario", "libro__titulo", "libro__isbn")
     list_filter = ("condicion", "libro__categoria")
     autocomplete_fields = ("libro",)
+    ordering = ["codigo_inventario"]
 
     def get_queryset(self, request):
         return (
@@ -150,6 +154,7 @@ class EstudianteAdmin(admin.ModelAdmin):
     list_display = ("codigo_estudiantil", "nombre", "correo", "prestamos_activos")
     search_fields = ("codigo_estudiantil", "nombre", "correo")
     list_filter = (TienePrestamoActivoFilter,)
+    ordering = ["nombre"]
 
     def get_queryset(self, request):
         return (
@@ -200,6 +205,7 @@ class PrestamoAdmin(admin.ModelAdmin):
     readonly_fields = ("fecha_prestamo",)
     autocomplete_fields = ("estudiante", "ejemplar")
     actions = [marcar_como_devueltos]
+    ordering = ["-fecha_prestamo", "-id"]
 
     def get_queryset(self, request):
         return (
