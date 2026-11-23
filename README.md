@@ -454,7 +454,9 @@ Mediciones realizadas con `CaptureQueriesContext(connection)` sobre el conjunto 
 
 ### Integrantes del grupo
 
+JEYSON CAMILO AGUILAR TARAZONA - 1152459
 NICOLAS OSWALDO FLOREZ DUARTE - 1152474
+PEDRO JOSE GARCIA LEAL - 1152483
 
 ### Preguntas de reflexión
 
